@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JiraDash 개인정보처리방침 / Privacy Policy</title>
+<style>
+  body { max-width: 760px; margin: 40px auto; padding: 0 20px; font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #1b1c2e; background: #fff; }
+  h1 { font-size: 24px; margin-bottom: 4px; }
+  h2 { font-size: 18px; margin-top: 36px; padding-top: 12px; border-top: 1px solid #e6e6f0; }
+  h3 { font-size: 15px; margin-top: 22px; }
+  .meta { color: #6f7390; font-size: 13px; }
+  .lang { display: flex; gap: 12px; margin: 16px 0 28px; font-size: 13px; }
+  .lang a { color: #6a5dd0; text-decoration: none; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  code { background: #f0f0f7; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+  .badge { display: inline-block; width: 26px; height: 26px; border-radius: 7px; background: linear-gradient(135deg, #5d5294, #9184d9); color: #fff; font-weight: 700; text-align: center; line-height: 26px; vertical-align: middle; margin-right: 8px; }
+</style>
+</head>
+<body>
+
+<h1><span class="badge">J</span>JiraDash</h1>
+<p class="meta">개인정보처리방침 · Privacy Policy — 최종 수정 / Last updated: 2026-09-11</p>
+<div class="lang"><a href="#ko">한국어</a> · <a href="#en">English</a></div>
+
+<!-- ───────────────────────── 한국어 ───────────────────────── -->
+<section id="ko">
+<h2>개인정보처리방침 (한국어)</h2>
+
+<p>JiraDash(이하 "확장 프로그램")는 사용자가 본인의 Jira Cloud 사이트의 이슈를 브라우저에서 조회·수정하고 관련 알림을 받을 수 있게 하는 Chrome 확장 프로그램입니다. 본 방침은 확장 프로그램이 어떤 데이터를 다루고 어떻게 보호하는지 설명합니다.</p>
+
+<h3>1. 개발자는 사용자 데이터를 수집하지 않습니다</h3>
+<p>확장 프로그램은 개발자가 운영하는 서버가 없으며, 어떠한 데이터도 개발자나 제3자에게 전송하지 않습니다. 분석(analytics), 추적, 광고, 오류 보고 SDK를 포함하지 않습니다.</p>
+
+<h3>2. 사용자의 브라우저에만 저장되는 데이터</h3>
+<p>다음 데이터는 사용자가 직접 입력하거나 사용 중 생성되며, <code>chrome.storage.local</code>을 통해 사용자의 브라우저 안에만 저장됩니다.</p>
+<ul>
+  <li><strong>Jira 연결 정보</strong>: Jira 사이트 URL, Atlassian 로그인 이메일, Atlassian API 토큰</li>
+  <li><strong>환경 설정</strong>: 테마, 언어, 알림 종류, 확인 주기, 브랜치명 포맷, 커스텀 JQL 필터, 마지막에 사용한 프로젝트·이슈 유형</li>
+  <li><strong>동작 상태</strong>: 알림 중복 방지를 위한 티켓별 마지막 확인 시각·상태, 최근 본 티켓 키 목록(최대 12개), 진행 중인 작업 타이머(티켓 키, 시작 시각)</li>
+</ul>
+<p>이 데이터는 브라우저 동기화 대상이 아니며(local 영역), 확장 프로그램을 삭제하면 함께 삭제됩니다. 설정 페이지의 "연결 해제"로 연결 정보를 즉시 지울 수 있습니다.</p>
+
+<h3>3. 네트워크 요청의 대상</h3>
+<p>확장 프로그램이 보내는 모든 API 요청은 <strong>사용자가 설정에 입력한 본인의 Atlassian 사이트(<code>https://&lt;사이트&gt;.atlassian.net</code>)</strong>로만 전송됩니다. 요청에는 사용자의 이메일과 API 토큰이 HTTP Basic 인증 헤더로 포함되며, 이는 Atlassian이 정한 표준 인증 방식입니다. 이 요청으로 조회한 이슈·댓글·보드 정보는 화면 표시에만 사용되고 저장되지 않습니다(위 2항의 "마지막 확인 시각·상태" 제외).</p>
+<p>그 외 외부 요청은 UI 글꼴을 위한 Google Fonts 스타일시트(<code>fonts.googleapis.com</code>, <code>fonts.gstatic.com</code>) 로드만 있으며, 이 요청에는 사용자 데이터가 포함되지 않습니다. Google의 처리 방침은 <a href="https://policies.google.com/privacy" rel="noopener">Google 개인정보처리방침</a>을 따릅니다.</p>
+
+<h3>4. 웹 페이지에서 읽는 정보</h3>
+<ul>
+  <li><strong>Jira 이슈 페이지</strong>(<code>*.atlassian.net/browse/*</code>, <code>/jira/*</code>): 현재 페이지 URL에서 이슈 키만 읽어 툴바를 표시합니다.</li>
+  <li><strong>GitHub Pull Request / GitLab Merge Request 페이지</strong>: 제목과 브랜치명 요소의 텍스트에서 Jira 이슈 키 패턴(예: <code>ABC-123</code>)만 찾아 상태 배지를 표시합니다. 그 외 페이지 내용은 읽지 않으며, 읽은 키도 저장하거나 외부로 전송하지 않습니다.</li>
+  <li><strong>우클릭 메뉴</strong>: 사용자가 "JiraDash에서 열기"를 선택한 순간에만 선택한 텍스트를 읽어 이슈 키를 인식합니다.</li>
+</ul>
+
+<h3>5. 데이터 공유 및 판매</h3>
+<p>사용자 데이터를 제3자에게 판매·전송·공유하지 않습니다. 확장 프로그램의 전용 목적 외의 용도로 사용하지 않으며, 신용도 판단·대출 등에 사용하지 않습니다.</p>
+
+<h3>6. 보안</h3>
+<p>API 토큰은 사용자의 브라우저 프로필 안에 저장되므로, 기기와 브라우저 프로필의 보안이 곧 토큰의 보안입니다. 공용 기기에서는 사용 후 "연결 해제"를 권장합니다. 토큰이 유출되었다고 판단되면 Atlassian 계정 설정(<a href="https://id.atlassian.com/manage-profile/security/api-tokens" rel="noopener">API 토큰</a>)에서 즉시 폐기할 수 있습니다.</p>
+
+<h3>7. 아동의 개인정보</h3>
+<p>확장 프로그램은 업무용 도구이며 만 14세 미만 아동을 대상으로 하지 않습니다.</p>
+
+<h3>8. 방침 변경</h3>
+<p>본 방침이 변경되면 이 페이지에 게시하고 상단의 최종 수정일을 갱신합니다. 데이터 처리 방식이 실질적으로 바뀌는 경우 확장 프로그램 업데이트 노트에도 명시합니다.</p>
+
+<h3>9. 문의</h3>
+<p>Chrome 웹 스토어의 JiraDash 항목 페이지에 표시된 지원 링크를 통해 문의할 수 있습니다.</p>
+</section>
+
+<!-- ───────────────────────── English ───────────────────────── -->
+<section id="en">
+<h2>Privacy Policy (English)</h2>
+
+<p>JiraDash (the "Extension") is a Chrome extension that lets you view and update issues on your own Jira Cloud site from the browser and receive related notifications. This policy explains what data the Extension handles and how it is protected.</p>
+
+<h3>1. The developer collects no user data</h3>
+<p>The Extension has no developer-operated server and transmits no data to the developer or any third party. It contains no analytics, tracking, advertising or crash-reporting SDKs.</p>
+
+<h3>2. Data stored only in your browser</h3>
+<p>The following data is entered by you or generated during use and is stored solely inside your browser via <code>chrome.storage.local</code>:</p>
+<ul>
+  <li><strong>Jira connection</strong>: Jira site URL, Atlassian login email, Atlassian API token</li>
+  <li><strong>Preferences</strong>: theme, language, notification types, polling interval, branch-name format, custom JQL filters, last-used project and issue type</li>
+  <li><strong>Operational state</strong>: per-ticket last-seen timestamp/status used to de-duplicate notifications, recently viewed ticket keys (max 12), active work timer (ticket key, start time)</li>
+</ul>
+<p>This data is not synced (local area only) and is deleted when the Extension is removed. "Disconnect" in the settings page erases the connection data immediately.</p>
+
+<h3>3. Where network requests go</h3>
+<p>Every API request made by the Extension is sent <strong>only to the Atlassian site you entered in settings (<code>https://&lt;yoursite&gt;.atlassian.net</code>)</strong>. Requests carry your email and API token in an HTTP Basic authentication header, which is Atlassian's standard authentication method. Issues, comments and board data retrieved this way are used only for display and are not stored (except the last-seen timestamp/status noted in section 2).</p>
+<p>The only other external request is loading the Google Fonts stylesheet (<code>fonts.googleapis.com</code>, <code>fonts.gstatic.com</code>) for UI typography; it carries no user data. Google's handling is governed by the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</p>
+
+<h3>4. Information read from web pages</h3>
+<ul>
+  <li><strong>Jira issue pages</strong> (<code>*.atlassian.net/browse/*</code>, <code>/jira/*</code>): only the issue key is read from the current URL to show the toolbar.</li>
+  <li><strong>GitHub Pull Request / GitLab Merge Request pages</strong>: only the title and branch-name elements are scanned for Jira issue key patterns (e.g. <code>ABC-123</code>) to display status badges. No other page content is read, and detected keys are neither stored nor transmitted elsewhere.</li>
+  <li><strong>Context menu</strong>: the selected text is read only at the moment you choose "Open in JiraDash", to detect an issue key.</li>
+</ul>
+
+<h3>5. Sharing and sale of data</h3>
+<p>We do not sell, transfer or share user data with third parties. Data is not used for purposes unrelated to the Extension's single purpose, nor for creditworthiness or lending decisions.</p>
+
+<h3>6. Security</h3>
+<p>Your API token is stored inside your browser profile; the security of your device and profile is the security of the token. On shared devices, use "Disconnect" after use. If you believe a token is compromised, revoke it immediately in your Atlassian account (<a href="https://id.atlassian.com/manage-profile/security/api-tokens" rel="noopener">API tokens</a>).</p>
+
+<h3>7. Children</h3>
+<p>The Extension is a work tool and is not directed at children under 13.</p>
+
+<h3>8. Changes</h3>
+<p>Changes to this policy will be posted on this page with an updated date above. Material changes to data handling will also be noted in the Extension's release notes.</p>
+
+<h3>9. Contact</h3>
+<p>Use the support link shown on the JiraDash listing in the Chrome Web Store.</p>
+</section>
+
+</body>
+</html>
